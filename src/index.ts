@@ -30,13 +30,14 @@ app.get('/', async (req, res) => {
 
 app.get('chat/:sessionId', async (req, res) => {
     //NEED MORE VALIDATION DATA TO IDENTIFY
-    let session = req.header('sessionID');
-    if (!session) session = uuidv4();
-    let currentSession = session
-    const input = req.body['input'];
-    const result = await askQuestion(currentSession + '_' + 'userSession', input, vectorsStore, client);
-    res.setHeader('sessionID', session)
-    res.send(result);
+    // let session = req.header('sessionID');
+    // if (!session) session = uuidv4();
+    // let currentSession = session
+    // const input = req.body['input'];
+    // const result = await askQuestion(currentSession + '_' + 'userSession', input, vectorsStore, client);
+    // res.setHeader('sessionID', session)
+    // res.send(result);
+    res.send('NOT AVAILABLE FOR NOW')
 })
 
 app.listen(3000, async () => {
